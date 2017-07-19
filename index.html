@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <title></title>
+    <link rel="stylesheet" href = "index.css"/>
+  </head>
+  <body>
+    <div class="slideshow-wrap" id = "sliderWrap"></div>
+    <script type = "text/javascript" src = "index.js"></script>
+    <script type = "text/javascript">
+    document.documentElement.style.fontSize = document.documentElement.clientWidth / 3.75 + 'px';
+    if ( document.documentElement.clientWidth >= 540 ) {
+        document.documentElement.style.fontSize =  540 / 3.75 + 'px';
+    }
+      var data = [{
+        imgUrl: 'https://ocpvgmewj.qnssl.com/80fecef2-8dc9-4d4f-91ef-15c484d32fc7.png'
+      },{
+        imgUrl: 'https://ocpvgmewj.qnssl.com/fc8c65a9-913b-4cc7-a3a4-e37996ba1e65.png'
+      },{
+        imgUrl: 'https://ocpvgmewj.qnssl.com/876f9f2d-604f-40db-aefb-39882444f5aa.jpg'
+      },{
+        imgUrl: 'https://ocpvgmewj.qnssl.com/ecd8bd9c-6105-44f2-9087-83af4717b53f.png'
+      }]
+      var sliderShow = new UISliderShow({
+        data: data,
+        ele: 'sliderShow',
+        autoTime: 5000,
+        slideItem: '.slideshow-item',
+        sliderLi: '.slideshow-item li',
+        sliderBtn: '.slideshow-dots li',
+        renderHTML: function (options) {
+          var sliderImg = options.data.map((item) => {
+            return `<li><img src="${item.imgUrl}"></li>`
+          }).join('')
+          var sliderActive = options.data.map((item,index) => {
+            if (index == 0) {
+              return `<li class="active"></li>`
+            } else {
+              return `<li></li>`
+            }
+          }).join('')
+          var sliderHtml =
+            `<ul class="slideshow-item" id = "sliderShow">
+              ${sliderImg}
+            </ul>
+            <ul class="slideshow-dots">
+              ${sliderActive}
+            </ul>`
+          document.getElementById('sliderWrap').innerHTML = sliderHtml;
+        }
+      })
+      sliderShow.start();
+    </script>
+  </body>
+</html>

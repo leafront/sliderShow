@@ -1,0 +1,80 @@
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-text-size-adjust: none
+}
+
+textarea,input {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none
+}
+
+html {
+    height: 100%;
+    font-size:100px;
+    max-width:540px;
+    margin:0 auto;
+}
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,legend,input,textarea,p,blockquote,th,td {
+    margin: 0;
+    padding: 0;
+
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+fieldset,img {
+    border: 0
+}
+
+li {
+    list-style: none
+}
+.slideshow-wrap {
+    overflow: hidden;
+    position: relative;
+    height: 100%
+}
+
+.slideshow-item {
+    width: 20000px;
+}
+
+.slideshow-item li {
+    width: 3.75rem;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+    position: relative
+}
+
+.slideshow-item img {
+    width: 3.75rem
+}
+
+.slideshow-dots {
+    position: absolute;
+    bottom: .5rem;
+    left: 50%;
+    color: #fff;
+    font-size: .16rem;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%)
+}
+
+.slideshow-dots li {
+    width: .075rem;
+    height: .075rem;
+    border-radius: 50%;
+    background-color: #fff;
+    float: left;
+    margin: 0 .05rem
+}
+
+.slideshow-dots li.active {
+    background-color: #fa5a4b
+}
